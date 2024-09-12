@@ -1,172 +1,60 @@
-
-
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Ogólne stylizacje */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa;
-    color: #333;
-}
-
-/* Container */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Nagłówek */
+/* Stylizacja dla przycisku i panelu logowania */
 header {
-    background: linear-gradient(90deg, #0066cc, #003366);
-    padding: 20px 0;
-}
-
-header .logo h1 {
+    background-color: #333;
     color: #fff;
-    font-size: 30px;
+    padding: 10px;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: right;
+    padding: 14px 16px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
-    padding: 10px 15px;
-    transition: background 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-}
-
-/* Sekcja Hero */
-.hero {
-    background-image: url('https://via.placeholder.com/1200x500');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 100px 0;
-    text-align: center;
-    position: relative;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
+#login-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 51, 102, 0.7);
-    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
-.hero .container {
-    position: relative;
-    z-index: 2;
-}
-
-.hero h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.btn-primary {
-    background-color: #0066cc;
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.btn-primary:hover {
-    background-color: #005bb5;
-}
-
-/* Sekcja Aktualności */
-.news {
-    margin: 50px 0;
-}
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.news article {
+.modal-content {
     background-color: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.news article:hover {
-    transform: translateY(-5px);
-}
-
-.news img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.news h3 {
-    font-size: 24px;
-    margin: 15px 0;
-}
-
-.btn-secondary {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    color: #0066cc;
-    border: 2px solid #0066cc;
     border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s, color 0.3s;
+    width: 300px;
+    position: relative;
 }
 
-.btn-secondary:hover {
-    background-color: #0066cc;
-    color: #fff;
+.hidden {
+    display: none;
 }
 
-/* Stopka */
-footer {
-    background-color: #003366;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }
 
-/* Responsywność */
-@media (max-width: 768px) {
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h2 {
-        font-size: 36px;
-    }
+#registration-form {
+    margin-top: 20px;
 }
+
