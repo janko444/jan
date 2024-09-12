@@ -3,57 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nowości o Samolotach</title>
+    <title>Samoloty News</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>Samoloty News</h1>
+        <div class="container">
+            <div class="logo">
+                <h1>Samoloty News</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Nowości</a></li>
+                    <li><a href="#">O nas</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Nowości</a></li>
-                <li><a href="#">O nas</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ul>
-        </nav>
     </header>
     
     <main>
-        <section class="news">
-            <h2>Najnowsze wiadomości o samolotach</h2>
-            <article>
-                <h3>Boeing wprowadza nowy model 787 Dreamliner</h3>
-                <p>Firma Boeing zaprezentowała swój najnowszy model 787 Dreamliner z zaawansowaną technologią i udoskonalonymi funkcjami. To przyszłość lotnictwa...</p>
-                <a href="#" class="read-more">Czytaj więcej</a>
-            </article>
-            <article>
-                <h3>Airbus testuje elektryczne samoloty</h3>
-                <p>Airbus prowadzi testy nad nowymi elektrycznymi samolotami, które mogą zrewolucjonizować przemysł lotniczy. Oczekuje się, że...</p>
-                <a href="#" class="read-more">Czytaj więcej</a>
-            </article>
+        <section class="hero">
+            <div class="container">
+                <h2>Najnowsze wiadomości ze świata lotnictwa</h2>
+                <p>Poznaj najnowsze trendy, technologie i wydarzenia w branży lotniczej.</p>
+                <a href="#" class="btn-primary">Czytaj więcej</a>
+            </div>
         </section>
-        
-        <aside class="sidebar">
-            <h2>Ciekawostki o lotnictwie</h2>
-            <ul>
-                <li>Najdłuższy lot na świecie trwa ponad 19 godzin!</li>
-                <li>Pierwszy samolot braci Wright wzbił się w powietrze w 1903 roku.</li>
-                <li>Największym samolotem na świecie jest Antonov An-225.</li>
-            </ul>
-        </aside>
+
+        <section class="news container">
+            <h2>Aktualności</h2>
+            <div class="news-grid">
+                <article>
+                    <img src="https://via.placeholder.com/400x200" alt="Samolot 1">
+                    <h3>Boeing wprowadza nowy model 787 Dreamliner</h3>
+                    <p>Boeing zaprezentował najnowszy model 787 Dreamliner...</p>
+                    <a href="#" class="btn-secondary">Czytaj więcej</a>
+                </article>
+                <article>
+                    <img src="https://via.placeholder.com/400x200" alt="Samolot 2">
+                    <h3>Airbus testuje elektryczne samoloty</h3>
+                    <p>Airbus prowadzi testy nad nowymi elektrycznymi samolotami...</p>
+                    <a href="#" class="btn-secondary">Czytaj więcej</a>
+                </article>
+                <article>
+                    <img src="https://via.placeholder.com/400x200" alt="Samolot 3">
+                    <h3>Przyszłość lotnictwa to samoloty bezzałogowe</h3>
+                    <p>W nadchodzących latach samoloty bezzałogowe...</p>
+                    <a href="#" class="btn-secondary">Czytaj więcej</a>
+                </article>
+            </div>
+        </section>
     </main>
     
     <footer>
-        <p>&copy; 2024 Samoloty News. Wszelkie prawa zastrzeżone.</p>
-        <div class="social">
-            <a href="#">Facebook</a> | 
-            <a href="#">Twitter</a> | 
-            <a href="#">Instagram</a>
+        <div class="container">
+            <p>&copy; 2024 Samoloty News. Wszelkie prawa zastrzeżone.</p>
         </div>
     </footer>
 </body>
 </html>
+
 
