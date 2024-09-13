@@ -3,41 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - Samoloty News</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Samoloty News - Kontakt</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Samoloty News</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="nowosci.html">Nowości</a></li>
-                    <li><a href="onas.html">O nas</a></li>
-                    <li><a href="kontakt.html" class="active">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main>
-        <section class="container">
-            <h2>Kontakt</h2>
-            <p>Masz pytania lub sugestie? Skontaktuj się z nami przez poniższe informacje:</p>
-            <ul>
-                <li>Email: kontakt@samolotynews.pl</li>
-                <li>Telefon: 123-456-789</li>
-            </ul>
-        </section>
-    </main>
+<header>
+    <h1>Samoloty News</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="nowosci.html">Nowości</a></li>
+            <li><a href="onas.html">O nas</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Samoloty News. Wszelkie prawa zastrzeżone.</p>
-        </div>
-    </footer>
+<div class="container">
+    <section class="main-section">
+        <h2>Kontakt</h2>
+        <form action="#">
+            <input type="text" name="name" placeholder="Imię" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <textarea name="message" rows="5" placeholder="Wiadomość" required></textarea>
+            <input type="submit" value="Wyślij">
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Samoloty News. Wszystkie prawa zastrzeżone. | <a href="kontakt.html">Kontakt</a></p>
+</footer>
+
 </body>
 </html>
