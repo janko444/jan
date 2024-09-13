@@ -6,6 +6,27 @@
     <title>Samoloty News</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .card {
+            margin-bottom: 30px; /* Odstęp między kartami */
+            height: 100%; /* Aby karty były równej wysokości */
+        }
+        .card-img-top {
+            object-fit: cover; /* Dopasowuje obrazki */
+            height: 200px; /* Ustala wysokość obrazków */
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-title {
+            font-size: 1.25rem;
+        }
+        .card-text {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
     <header class="bg-primary text-white p-3">
@@ -34,11 +55,11 @@
             <!-- Artykuł 1 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="path/to/image1.jpg" class="card-img-top" alt="Artykuł 1">
+                    <img src="images/article1.jpg" class="card-img-top" alt="Artykuł 1">
                     <div class="card-body">
                         <h5 class="card-title">Nowy Model Samolotu 2024</h5>
                         <p class="card-text">Odkryj najnowszy model samolotu, który wkrótce wejdzie na rynek. Dowiedz się więcej o jego innowacyjnych funkcjach i specyfikacjach.</p>
-                        <a href="nowosci.html" class="btn btn-primary">Czytaj więcej</a>
+                        <a href="nowosci.html#article1" class="btn btn-primary">Czytaj więcej</a>
                     </div>
                 </div>
             </div>
@@ -46,11 +67,11 @@
             <!-- Artykuł 2 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="path/to/image2.jpg" class="card-img-top" alt="Artykuł 2">
+                    <img src="images/article2.jpg" class="card-img-top" alt="Artykuł 2">
                     <div class="card-body">
                         <h5 class="card-title">Trendy w Lotnictwie</h5>
                         <p class="card-text">Przegląd najnowszych trendów w lotnictwie i jak zmieniają one sposób, w jaki podróżujemy po świecie.</p>
-                        <a href="nowosci.html" class="btn btn-primary">Czytaj więcej</a>
+                        <a href="nowosci.html#article2" class="btn btn-primary">Czytaj więcej</a>
                     </div>
                 </div>
             </div>
@@ -58,11 +79,11 @@
             <!-- Artykuł 3 -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="path/to/image3.jpg" class="card-img-top" alt="Artykuł 3">
+                    <img src="images/article3.jpg" class="card-img-top" alt="Artykuł 3">
                     <div class="card-body">
                         <h5 class="card-title">Bezpieczeństwo w Lotnictwie</h5>
                         <p class="card-text">Jakie są najnowsze standardy bezpieczeństwa w lotnictwie i jakie zmiany wprowadzono w ostatnich latach?</p>
-                        <a href="nowosci.html" class="btn btn-primary">Czytaj więcej</a>
+                        <a href="nowosci.html#article3" class="btn btn-primary">Czytaj więcej</a>
                     </div>
                 </div>
             </div>
@@ -78,4 +99,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 
