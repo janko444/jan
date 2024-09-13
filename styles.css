@@ -1,52 +1,147 @@
-.konto-button {
-    background-color: #007BFF;
+/* Resetowanie marginesów i paddingów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styl całej strony */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f0f4f8;
+}
+
+/* Styl nagłówka */
+header {
+    background-color: #0044cc;
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
     text-decoration: none;
     font-size: 16px;
-    margin-left: 10px;
 }
 
-.form-container {
-    max-width: 600px;
-    margin: auto;
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Styl kontenera */
+.container {
+    margin-top: 70px; /* Margines na nagłówek */
     padding: 20px;
-    background: #f9f9f9;
+}
+
+/* Styl sekcji głównej */
+.main-section {
+    background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
-.form-container h3 {
-    margin-top: 0;
-}
-
-form label {
-    display: block;
+/* Styl przycisków */
+.button, .konto-button {
+    display: inline-block;
+    background-color: #0044cc;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
     margin-top: 10px;
 }
 
-form input[type="email"],
-form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+.button:hover, .konto-button:hover {
+    background-color: #0033aa;
 }
 
-form input[type="submit"] {
-    background-color: #007BFF;
+/* Styl formularzy */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #0044cc;
     color: white;
-    padding: 10px 20px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0033aa;
+}
+
+/* Styl stopki */
+footer {
+    background-color: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #ccf;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Styl kart */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.card h3 {
     margin-top: 10px;
 }
 
-form input[type="submit"]:hover {
-    background-color: #0056b3;
-}
 
 
