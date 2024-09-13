@@ -1,44 +1,242 @@
-<section class="news container">
-    <h2>Aktualności</h2>
-    <div class="news-grid">
-        <article>
-            <img src="images/samolot1.jpg" alt="Samolot 1">
-            <h3>Boeing wprowadza nowy model 787 Dreamliner</h3>
-            <p>Boeing zaprezentował najnowszy model 787 Dreamliner, który obiecuje niższe zużycie paliwa i większy zasięg lotów...</p>
-            <a href="nowosci.html" class="btn-secondary">Czytaj więcej</a>
-        </article>
-        <article>
-            <img src="images/samolot2.jpg" alt="Samolot 2">
-            <h3>Airbus testuje elektryczne samoloty</h3>
-            <p>Airbus prowadzi testy nad nowymi elektrycznymi samolotami, które mogą zrewolucjonizować transport lotniczy do 2030 roku...</p>
-            <a href="nowosci.html" class="btn-secondary">Czytaj więcej</a>
-        </article>
-        <article>
-            <img src="images/samolot3.jpg" alt="Samolot 3">
-            <h3>Przyszłość lotnictwa to samoloty bezzałogowe</h3>
-            <p>W nadchodzących latach samoloty bezzałogowe mogą stać się standardem na długodystansowych lotach międzynarodowych...</p>
-            <a href="nowosci.html" class="btn-secondary">Czytaj więcej</a>
-        </article>
-        <article>
-            <img src="images/samolot4.jpg" alt="Samolot 4">
-            <h3>Nowa generacja samolotów pasażerskich od Lockheed Martin</h3>
-            <p>Lockheed Martin zaprezentował nową linię samolotów pasażerskich, które mają zwiększyć komfort podróży...</p>
-            <a href="nowosci.html" class="btn-secondary">Czytaj więcej</a>
-        </article>
-        <article>
-            <img src="images/samolot5.jpg" alt="Samolot 5">
-            <h3>Silniki turbowentylatorowe przyszłości – mniejsze emisje CO2</h3>
-            <p>Nowe silniki turbowentylatorowe opracowane przez Rolls-Royce pozwolą zmniejszyć emisje CO2 o 25%...</p>
-            <a href="nowosci.html" class="btn-secondary">Czytaj więcej</a>
-        </article>
-        <article>
-            <img src="images/samolot6.jpg" alt="Samolot 6">
-            <h3>Virgin Galactic gotowy do turystyki kosmicznej</h3>
-            <p>Virgin Galactic kończy testy swojego pojazdu kosmicznego, a pierwsze komercyjne loty turystyczne mogą odbyć się jeszcze w tym roku...</p>
-            <a href="nowosci.html" class="btn-secondary">Czytaj więcej</a>
-        </article>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samoloty News - Najnowsze Wiadomości o Samolotach</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Styl CSS -->
+    <style>
+        /* Styl strony - patrz poprzednia odpowiedź */
+
+        /* Podstawowe style */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f7f9;
+        }
+
+        header {
+            background-color: #212121;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+
+        /* Styl nowoczesnych przycisków */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Flexbox - nowoczesny układ */
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        /* Nowoczesne karty artykułów */
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 300px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .card p {
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* Panel logowania */
+        #login-panel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #888;
+        }
+
+        #close-btn:hover {
+            color: #333;
+        }
+
+        /* Responsywność */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Nagłówek -->
+    <header>
+        <div class="logo">
+            <h1>Samoloty News</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Strona Główna</a></li>
+                <li><a href="#">Artykuły</a></li>
+                <li><a href="#">Kontakt</a></li>
+                <li><a href="#" id="login-btn">👤Konto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Główna zawartość strony -->
+    <div class="container">
+        <div class="card">
+            <img src="samolot1.jpg" alt="Samolot">
+            <h3>Najnowszy Model Samolotu</h3>
+            <p>Sprawdź najnowsze informacje o najnowszym modelu samolotu, który wkrótce trafi na rynek...</p>
+        </div>
+        <div class="card">
+            <img src="samolot2.jpg" alt="Samolot">
+            <h3>Testy Samolotów</h3>
+            <p>Dowiedz się więcej o ostatnich testach przeprowadzonych na modelach samolotów...</p>
+        </div>
+        <div class="card">
+            <img src="samolot3.jpg" alt="Samolot">
+            <h3>Technologie Lotnicze</h3>
+            <p>Nowoczesne technologie lotnicze wprowadzone do nowych modeli samolotów komercyjnych...</p>
+        </div>
     </div>
-</section>
+
+    <!-- Panel logowania -->
+    <div id="login-panel" class="hidden">
+        <div class="modal-content">
+            <span id="close-btn">&times;</span>
+            <h2>Logowanie</h2>
+            <form>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="password">Hasło:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <button type="submit">Zaloguj się</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript do obsługi panelu logowania -->
+    <script>
+        const loginBtn = document.getElementById('login-btn');
+        const loginPanel = document.getElementById('login-panel');
+        const closeBtn = document.getElementById('close-btn');
+
+        loginBtn.addEventListener('click', () => {
+            loginPanel.classList.remove('hidden');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            loginPanel.classList.add('hidden');
+        });
+    </script>
+
+</body>
+</html>
+
 
 
 
