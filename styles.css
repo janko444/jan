@@ -7,76 +7,81 @@
 
 /* Styl całej strony */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     color: #333;
-    background-color: #f0f4f8;
+    background-color: #f4f7f9;
 }
 
 /* Styl nagłówka */
 header {
-    background-color: #0044cc;
+    background-color: #007bff;
     color: white;
-    padding: 15px;
+    padding: 20px 0;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
+    text-align: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #f8f9fa;
 }
 
 /* Styl kontenera */
 .container {
-    margin-top: 70px; /* Margines na nagłówek */
+    margin-top: 80px; /* Margines na nagłówek */
     padding: 20px;
 }
 
 /* Styl sekcji głównej */
 .main-section {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 /* Styl przycisków */
 .button, .konto-button {
     display: inline-block;
-    background-color: #0044cc;
+    background-color: #007bff;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     font-size: 16px;
-    margin-top: 10px;
+    transition: background-color 0.3s;
 }
 
 .button:hover, .konto-button:hover {
-    background-color: #0033aa;
+    background-color: #0056b3;
 }
 
 /* Styl formularzy */
@@ -87,37 +92,40 @@ form {
 }
 
 input[type="text"], input[type="email"], input[type="password"], textarea {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-size: 16px;
 }
 
 input[type="submit"] {
-    background-color: #0044cc;
+    background-color: #007bff;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover {
-    background-color: #0033aa;
+    background-color: #0056b3;
 }
 
 /* Styl stopki */
 footer {
-    background-color: #0044cc;
+    background-color: #007bff;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
 footer a {
-    color: #ccf;
+    color: #cce5ff;
     text-decoration: none;
 }
 
@@ -128,8 +136,8 @@ footer a:hover {
 /* Styl kart */
 .card {
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -142,6 +150,7 @@ footer a:hover {
 .card h3 {
     margin-top: 10px;
 }
+
 
 
 
