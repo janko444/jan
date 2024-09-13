@@ -1,27 +1,101 @@
-/* Stylizacja dla przycisku i panelu logowania */
+/* Podstawowe style */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f7f9;
+}
+
 header {
-    background-color: #333;
+    background-color: #212121;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: #fff;
-    padding: 10px;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 nav ul li {
-    float: right;
-    padding: 14px 16px;
+    margin-left: 20px;
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Styl nowoczesnych przycisków */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Flexbox - nowoczesny układ */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+/* Nowoczesne karty artykułów */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.card p {
+    color: #777;
+    line-height: 1.6;
+}
+
+/* Panel logowania */
 #login-panel {
     display: flex;
     justify-content: center;
@@ -38,9 +112,10 @@ nav ul li a {
 .modal-content {
     background-color: #fff;
     padding: 20px;
-    border-radius: 5px;
-    width: 300px;
+    border-radius: 10px;
+    width: 400px;
     position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .hidden {
@@ -52,9 +127,27 @@ nav ul li a {
     top: 10px;
     right: 10px;
     cursor: pointer;
+    font-size: 24px;
+    color: #888;
 }
 
-#registration-form {
-    margin-top: 20px;
+#close-btn:hover {
+    color: #333;
 }
 
+/* Responsywność */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
