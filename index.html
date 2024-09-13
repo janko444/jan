@@ -4,27 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samoloty News</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Samoloty News</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Strona główna</a></li>
-                <li><a href="nowosci.html">Nowości</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="konto.html" class="konto-button">👤 Konto</a></li>
-            </ul>
-        </nav>
+    <header class="bg-primary text-white p-3">
+        <div class="container">
+            <h1>Samoloty News</h1>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Samoloty News</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Strona główna</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nowosci.html">Nowości</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-light" href="konto.html">👤 Konto</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
-        <!-- Treść strony -->
-    </div>
+    <main class="container my-5">
+        <h2>Najciekawsze Artykuły</h2>
+        <div class="row">
+            <!-- Artykuł 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="path/to/image1.jpg" class="card-img-top" alt="Artykuł 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Nowy Model Samolotu 2024</h5>
+                        <p class="card-text">Odkryj najnowszy model samolotu, który wkrótce wejdzie na rynek. Dowiedz się więcej o jego innowacyjnych funkcjach i specyfikacjach.</p>
+                        <a href="nowosci.html" class="btn btn-primary">Czytaj więcej</a>
+                    </div>
+                </div>
+            </div>
 
-    <footer>
-        <p>&copy; 2024 Samoloty News. Wszystkie prawa zastrzeżone. | <a href="kontakt.html">Kontakt</a></p>
+            <!-- Artykuł 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="path/to/image2.jpg" class="card-img-top" alt="Artykuł 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Trendy w Lotnictwie</h5>
+                        <p class="card-text">Przegląd najnowszych trendów w lotnictwie i jak zmieniają one sposób, w jaki podróżujemy po świecie.</p>
+                        <a href="nowosci.html" class="btn btn-primary">Czytaj więcej</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artykuł 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="path/to/image3.jpg" class="card-img-top" alt="Artykuł 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Bezpieczeństwo w Lotnictwie</h5>
+                        <p class="card-text">Jakie są najnowsze standardy bezpieczeństwa w lotnictwie i jakie zmiany wprowadzono w ostatnich latach?</p>
+                        <a href="nowosci.html" class="btn btn-primary">Czytaj więcej</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-white text-center p-3">
+        <p>&copy; 2024 Samoloty News. Wszystkie prawa zastrzeżone. | <a href="kontakt.html" class="text-light">Kontakt</a></p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
