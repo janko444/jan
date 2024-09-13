@@ -3,244 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samoloty News - Najnowsze Wiadomości o Samolotach</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Styl CSS -->
-    <style>
-        /* Styl strony - patrz poprzednia odpowiedź */
-
-        /* Podstawowe style */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f4f7f9;
-        }
-
-        header {
-            background-color: #212121;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #fff;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #4CAF50;
-        }
-
-        /* Styl nowoczesnych przycisków */
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        /* Flexbox - nowoczesny układ */
-        .container {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            margin: 20px;
-        }
-
-        /* Nowoczesne karty artykułów */
-        .card {
-            background-color: white;
-            padding: 20px;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 300px;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .card h3 {
-            margin: 10px 0;
-            color: #333;
-        }
-
-        .card p {
-            color: #777;
-            line-height: 1.6;
-        }
-
-        /* Panel logowania */
-        #login-panel {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            width: 400px;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        #close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-size: 24px;
-            color: #888;
-        }
-
-        #close-btn:hover {
-            color: #333;
-        }
-
-        /* Responsywność */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-        }
-
-    </style>
+    <title>Samoloty News - Strona Główna</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Nagłówek -->
-    <header>
-        <div class="logo">
-            <h1>Samoloty News</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Strona Główna</a></li>
-                <li><a href="#">Artykuły</a></li>
-                <li><a href="#">Kontakt</a></li>
-                <li><a href="#" id="login-btn">👤Konto</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>Samoloty News</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="nowosci.html">Nowości</a></li>
+            <li><a href="onas.html">O nas</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Główna zawartość strony -->
-    <div class="container">
+<div class="container">
+    <section class="main-section">
+        <h2>Najnowsze wiadomości o samolotach</h2>
         <div class="card">
-            <img src="samolot1.jpg" alt="Samolot">
-            <h3>Najnowszy Model Samolotu</h3>
-            <p>Sprawdź najnowsze informacje o najnowszym modelu samolotu, który wkrótce trafi na rynek...</p>
+            <img src="samolot1.jpg" alt="Najnowszy model samolotu">
+            <h3>Nowy Model Samolotu Wchodzi na Rynek</h3>
+            <p>Przeczytaj o nowym modelu, który ma zmienić branżę lotniczą...</p>
         </div>
+
         <div class="card">
-            <img src="samolot2.jpg" alt="Samolot">
-            <h3>Testy Samolotów</h3>
-            <p>Dowiedz się więcej o ostatnich testach przeprowadzonych na modelach samolotów...</p>
+            <img src="samolot2.jpg" alt="Technologie lotnicze">
+            <h3>Nowe Technologie w Przemyśle Lotniczym</h3>
+            <p>Odkryj najnowsze technologie wykorzystywane w samolotach komercyjnych...</p>
         </div>
-        <div class="card">
-            <img src="samolot3.jpg" alt="Samolot">
-            <h3>Technologie Lotnicze</h3>
-            <p>Nowoczesne technologie lotnicze wprowadzone do nowych modeli samolotów komercyjnych...</p>
-        </div>
-    </div>
+    </section>
+</div>
 
-    <!-- Panel logowania -->
-    <div id="login-panel" class="hidden">
-        <div class="modal-content">
-            <span id="close-btn">&times;</span>
-            <h2>Logowanie</h2>
-            <form>
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="password">Hasło:</label>
-                <input type="password" id="password" name="password" required><br><br>
-                <button type="submit">Zaloguj się</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- JavaScript do obsługi panelu logowania -->
-    <script>
-        const loginBtn = document.getElementById('login-btn');
-        const loginPanel = document.getElementById('login-panel');
-        const closeBtn = document.getElementById('close-btn');
-
-        loginBtn.addEventListener('click', () => {
-            loginPanel.classList.remove('hidden');
-        });
-
-        closeBtn.addEventListener('click', () => {
-            loginPanel.classList.add('hidden');
-        });
-    </script>
+<footer>
+    <p>&copy; 2024 Samoloty News. Wszystkie prawa zastrzeżone. | <a href="kontakt.html">Kontakt</a></p>
+</footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
