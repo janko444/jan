@@ -1,236 +1,52 @@
-/* Globalny reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Tło i typografia */
-body {
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    background-color: #f4f7f9;
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: #333;
-}
-
-a:hover {
-    color: #4CAF50;
-}
-
-/* Nagłówek */
-header {
-    background-color: #212121;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-header h1 {
-    font-size: 24px;
-    color: #4CAF50;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #4CAF50;
-}
-
-/* Kontener główny */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-}
-
-/* Sekcja główna */
-.main-section {
-    margin-top: 50px;
-}
-
-/* Karty artykułów */
-.card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.card h3 {
-    margin-top: 15px;
-}
-
-.card p {
-    color: #777;
-    margin-top: 10px;
-}
-
-/* Stopka */
-footer {
-    background-color: #212121;
-    padding: 20px;
-    color: white;
-    text-align: center;
-    margin-top: 50px;
-}
-
-footer a {
-    color: #4CAF50;
-}
-
-/* Formularz kontaktowy */
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-form input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-form input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-/* Responsywność */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .container {
-        width: 95%;
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.container {
-    padding: 20px;
-}
-
-.main-section {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.card {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    padding: 15px;
-}
-
-.card img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-.card h3 {
-    margin-top: 0;
-}
-
-.button {
+.konto-button {
     background-color: #007BFF;
     color: white;
     padding: 10px 20px;
-    text-decoration: none;
     border-radius: 5px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-}
-
-footer a {
-    color: #fff;
     text-decoration: none;
-
-    }
+    font-size: 16px;
+    margin-left: 10px;
 }
+
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h3 {
+    margin-top: 0;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+form input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
 
