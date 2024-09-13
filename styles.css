@@ -1,27 +1,48 @@
-/* Podstawowe style */
-body {
-    font-family: 'Poppins', sans-serif;
+/* Globalny reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f7f9;
 }
 
+/* Tło i typografia */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f4f7f9;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #4CAF50;
+}
+
+/* Nagłówek */
 header {
     background-color: #212121;
-    padding: 10px 20px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #4CAF50;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    align-items: center;
 }
 
 nav ul li {
@@ -29,125 +50,109 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none;
     color: #fff;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
     color: #4CAF50;
 }
 
-/* Styl nowoczesnych przycisków */
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-/* Flexbox - nowoczesny układ */
+/* Kontener główny */
 .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
-/* Nowoczesne karty artykułów */
+/* Sekcja główna */
+.main-section {
+    margin-top: 50px;
+}
+
+/* Karty artykułów */
 .card {
     background-color: white;
+    border-radius: 8px;
     padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .card h3 {
-    margin: 10px 0;
-    color: #333;
+    margin-top: 15px;
 }
 
 .card p {
     color: #777;
-    line-height: 1.6;
+    margin-top: 10px;
 }
 
-/* Panel logowania */
-#login-panel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+/* Stopka */
+footer {
+    background-color: #212121;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
 }
 
-.modal-content {
+footer a {
+    color: #4CAF50;
+}
+
+/* Formularz kontaktowy */
+form {
     background-color: #fff;
     padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.hidden {
-    display: none;
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-#close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
     cursor: pointer;
-    font-size: 24px;
-    color: #888;
 }
 
-#close-btn:hover {
-    color: #333;
+form input[type="submit"]:hover {
+    background-color: #45a049;
 }
 
 /* Responsywność */
 @media (max-width: 768px) {
-    .container {
+    header {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     nav ul {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
     }
 
-    nav ul li {
-        margin: 10px 0;
+    .container {
+        width: 95%;
     }
 }
+
