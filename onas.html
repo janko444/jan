@@ -27,6 +27,17 @@
         <p>Samoloty News to portal informacyjny poświęcony najnowszym wydarzeniom w branży lotniczej. Naszym celem jest dostarczanie rzetelnych informacji i aktualności o samolotach, nowych technologiach i innowacjach w lotnictwie.</p>
     </section>
 </div>
+    <?php
+$file = 'visit_count.txt';
+if (file_exists($file)) {
+    $visits = (int)file_get_contents($file);
+    $visits++;
+    file_put_contents($file, $visits);
+} else {
+    file_put_contents($file, 1);
+}
+?>
+
 
 <footer>
     <p>&copy; 2024 Samoloty News. Wszystkie prawa zastrzeżone. | <a href="kontakt.html">Kontakt</a></p>
