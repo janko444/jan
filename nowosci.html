@@ -62,6 +62,17 @@
                 </div>
             </div>
         </div>
+            <?php
+$file = 'visit_count.txt';
+if (file_exists($file)) {
+    $visits = (int)file_get_contents($file);
+    $visits++;
+    file_put_contents($file, $visits);
+} else {
+    file_put_contents($file, 1);
+}
+?>
+
     </main>
 
     <footer class="bg-primary text-white text-center p-3">
