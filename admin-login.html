@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie - Panel Admina</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Logowanie do Panelu Admina</h2>
+        <form id="adminLoginForm" method="POST" action="admin-panel.php">
+            <div class="form-group">
+                <label for="password">Hasło:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Zaloguj</button>
+        </form>
+    </div>
+</body>
+</html>
