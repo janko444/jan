@@ -82,6 +82,23 @@ if (file_exists($file)) {
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <?php
+// Wczytaj artykuły z pliku JSON
+$filePath = 'articles.json';
+if (file_exists($filePath)) {
+    $articles = json_decode(file_get_contents($filePath), true);
+} else {
+    $articles = [];
+}
+
+// Wyświetl artykuły
+foreach ($articles as $article) {
+    echo "<h2>" . htmlspecialchars($article['title']) . "</h2>";
+    echo "<p>" . htmlspecialchars($article['content']) . "</p>";
+    echo "<p><small>Dodano: " . htmlspecialchars($article['date']) . "</small></p>";
+}
+?>
+
 </body>
 </html>
 
