@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admina - Dodawanie Artykułów</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Panel Admina - Dodaj Artykuł</h1>
+        <form id="articleForm">
+            <div class="form-group">
+                <label for="title">Tytuł artykułu</label>
+                <input type="text" class="form-control" id="title" placeholder="Wpisz tytuł" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Treść artykułu</label>
+                <textarea class="form-control" id="content" rows="5" placeholder="Wpisz treść artykułu" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Dodaj artykuł</button>
+        </form>
+        <div id="successMessage" class="mt-3 text-success" style="display:none;">Artykuł został dodany!</div>
+    </div>
+
+    <script>
+        document.getElementById("articleForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            // Zbierz dane z formularza
+            const title = document.getElementById("title").value;
+            const content = document.getElementById("content").value;
+
+            // Symulowane zapisywanie artykułu (lokalne)
+            let articles = JSON.parse(localStorage.getItem("articles")) || [];
+            articles.push({ title: title, content: content });
+            localStorage.setItem("articles", JSON.stringify(articles));
+
+            // Pokaż komunikat o sukcesie
+            document.getElementById("successMessage").style.display = "block";
+
+            // Wyczyść formularz
+            document.getElementById("articleForm").reset();
+        });
+    </script>
+</body>
+</html>
