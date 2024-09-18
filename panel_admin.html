@@ -5,106 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Admina</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container my-5">
         <h1>Panel Admina</h1>
-        <form id="articleForm">
+        <form id="article-form">
             <div class="form-group">
-                <label for="title">Tytuł artykułu</label>
+                <label for="title">Tytuł artykułu:</label>
                 <input type="text" class="form-control" id="title" required>
             </div>
             <div class="form-group">
-                <label for="content">Treść artykułu</label>
+                <label for="content">Treść artykułu:</label>
                 <textarea class="form-control" id="content" rows="5" required></textarea>
             </div>
             <div class="form-group">
-                <label for="image">URL do obrazka</label>
-                <input type="text" class="form-control" id="image" required>
+                <label for="imageUrl">URL obrazka:</label>
+                <input type="url" class="form-control" id="imageUrl" required>
             </div>
-            <button type="submit" class="btn btn-primary">Dodaj artykuł</button>
+            <button type="submit" class="btn btn-primary">Dodaj Artykuł</button>
         </form>
 
         <hr>
 
         <h2>Istniejące artykuły</h2>
-        <div id="existing-articles">
-            <!-- Istniejące artykuły będą tutaj wyświetlane -->
+        <div id="articles-list">
+            <!-- Tutaj będą wyświetlane artykuły do edycji/usuwania -->
         </div>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let articles = JSON.parse(localStorage.getItem("articles")) || [];
+        // Funkcja do zapisywania artykułu
+        function saveArticle(e) {
+            e.preventDefault();
+            let title = document.getElementById('title').value;
+            let content = document.getElementById('content').value;
+            let imageUrl = document.getElementById('imageUrl').value;
 
-            const renderExistingArticles = () => {
-                const existingArticlesDiv = document.getElementById("existing-articles");
-                existingArticlesDiv.innerHTML = "";
-                articles.forEach((article, index) => {
-                    let articleHTML = `
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">${article.title}</h5>
-                                <p class="card-text">${article.content.slice(0, 100)}...</p>
-                                <button class="btn btn-danger" onclick="deleteArticle(${index})">Usuń</button>
-                                <button class="btn btn-warning" onclick="editArticle(${index})">Edytuj</button>
-                            </div>
-                        </div>
-                    `;
-                    existingArticlesDiv.innerHTML += articleHTML;
-                });
+            let articles = JSON.parse(localStorage.getItem('articles')) || [];
+            let newArticle = {
+                title: title,
+                content: content,
+                imageUrl: imageUrl
             };
 
-            window.deleteArticle = function(index) {
-                if (confirm("Czy na pewno chcesz usunąć ten artykuł?")) {
-                    articles.splice(index, 1);
-                    localStorage.setItem("articles", JSON.stringify(articles));
-                    renderExistingArticles();
-                    alert("Artykuł został usunięty!");
-                }
-            };
+            articles.push(newArticle);
+            localStorage.setItem('articles', JSON.stringify(articles));
 
-            window.editArticle = function(index) {
-                const newTitle = prompt("Nowy tytuł", articles[index].title);
-                const newContent = prompt("Nowa treść", articles[index].content);
-                const newImage = prompt("Nowy URL obrazka", articles[index].image);
-                if (newTitle && newContent && newImage) {
-                    articles[index].title = newTitle;
-                    articles[index].content = newContent;
-                    articles[index].image = newImage;
-                    localStorage.setItem("articles", JSON.stringify(articles));
-                    renderExistingArticles();
-                    alert("Artykuł został zaktualizowany!");
-                }
-            };
+            loadArticles();
+            document.getElementById('article-form').reset();
+        }
 
-            document.getElementById("articleForm").addEventListener("submit", function(event) {
-                event.preventDefault();
+        // Funkcja do ładowania artykułów w panelu admina
+        function loadArticles() {
+            let articles = JSON.parse(localStorage.getItem('articles')) || [];
+            let articlesList = document.getElementById('articles-list');
+            articlesList.innerHTML = ''; // Czyszczenie listy artykułów
 
-                let title = document.getElementById("title").value;
-                let content = document.getElementById("content").value;
-                let image = document.getElementById("image").value;
-
-                let newArticle = {
-                    title: title,
-                    content: content,
-                    image: image
-                };
-
-                articles.push(newArticle);
-                localStorage.setItem("articles", JSON.stringify(articles));
-
-                document.getElementById("articleForm").reset();
-                renderExistingArticles();
-                alert("Artykuł został dodany!");
+            articles.forEach((article, index) => {
+                let articleHTML = `
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">${article.title}</h5>
+                        <p class="card-text">${article.content}</p>
+                        <button class="btn btn-danger" onclick="deleteArticle(${index})">Usuń</button>
+                    </div>
+                </div>`;
+                articlesList.innerHTML += articleHTML;
             });
+        }
 
-            renderExistingArticles();
-        });
+        // Funkcja do usuwania artykułu
+        function deleteArticle(index) {
+            let articles = JSON.parse(localStorage.getItem('articles')) || [];
+            articles.splice(index, 1); // Usunięcie artykułu
+            localStorage.setItem('articles', JSON.stringify(articles));
+
+            loadArticles();
+        }
+
+        document.getElementById('article-form').addEventListener('submit', saveArticle);
+        window.onload = loadArticles;
     </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
