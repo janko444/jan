@@ -19,6 +19,10 @@
                 <label for="articleContent">Treść artykułu</label>
                 <textarea class="form-control" id="articleContent" rows="3" placeholder="Wpisz treść"></textarea>
             </div>
+            <div class="form-group">
+                <label for="articleImage">Obrazek do artykułu</label>
+                <input type="file" class="form-control" id="articleImage" accept="image/*">
+            </div>
             <button type="submit" class="btn btn-primary">Dodaj artykuł</button>
         </form>
 
@@ -37,8 +41,9 @@
                 articles.forEach((article, index) => {
                     let articleHTML = `
                         <div class="list-group-item">
+                            <img src="${article.image}" class="img-fluid mb-2" alt="Obrazek artykułu" style="max-width: 100px;">
                             <h5>${article.title}</h5>
-                            <p>${article.content}</p>
+                            <p>${article.content.slice(0, 100)}... <a href="#" onclick="showFullArticle(${index})">Czytaj więcej</a></p>
                             <button class="btn btn-warning btn-sm" onclick="editArticle(${index})">Edytuj</button>
                             <button class="btn btn-danger btn-sm" onclick="deleteArticle(${index})">Usuń</button>
                         </div>
@@ -52,12 +57,24 @@
                 event.preventDefault();
                 const title = document.getElementById("articleTitle").value;
                 const content = document.getElementById("articleContent").value;
-
-                if (title && content) {
-                    articles.push({ title, content });
-                    localStorage.setItem("articles", JSON.stringify(articles));
-                    renderArticles();
-                    addArticleForm.reset();
+                const imageFile = document.getElementById("articleImage").files[0];
+                
+                if (title && content && imageFile) {
+                    const reader = new FileReader();
+                    reader.onloadend = function() {
+                        const article = {
+                            title,
+                            content,
+                            image: reader.result
+                        };
+                        articles.push(article);
+                        localStorage.setItem("articles", JSON.stringify(articles));
+                        renderArticles();
+                        addArticleForm.reset();
+                    };
+                    reader.readAsDataURL(imageFile);
+                } else {
+                    alert("Wypełnij wszystkie pola!");
                 }
             });
 
@@ -79,6 +96,10 @@
                     localStorage.setItem("articles", JSON.stringify(articles));
                     renderArticles();
                 }
+            };
+
+            window.showFullArticle = function(index) {
+                alert("Tytuł: " + articles[index].title + "\nTreść: " + articles[index].content);
             };
 
             renderArticles();
