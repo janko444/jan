@@ -4,15 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strona Główna - Samoloty News</title>
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <!-- CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -58,7 +52,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="path/to/image1.jpg" class="card-img-top" alt="Artykuł 2">
+                    <img src="path/to/image2.jpg" class="card-img-top" alt="Artykuł 2">
                     <div class="card-body">
                         <h5 class="card-title">Maersk Air Cargo Otrzymuje Pierwszy Samolot Boeing 777F</h5>
                         <p class="card-text">Maersk Air Cargo odebrał swój pierwszy samolot Boeing 777F, zaprojektowany specjalnie do efektywnego transportu ładunków.</p>
@@ -70,45 +64,17 @@
                 <div class="card mb-4">
                     <img src="path/to/image3.jpg" class="card-img-top" alt="Artykuł 3">
                     <div class="card-body">
-                        <h5 class="card-title">Do wypełnienia później</h5>
-                        <p class="card-text">Artykuł w trakcie przygotowania.</p>
+                        <h5 class="card-title">Testowy artykuł</h5>
+                        <p class="card-text">Treść do uzupełnienia później.</p>
                         <a href="nowosci.html#article3" class="btn btn-primary">Czytaj więcej</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="path/to/image4.jpg" class="card-img-top" alt="Artykuł 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Do wypełnienia później</h5>
-                        <p class="card-text">Artykuł w trakcie przygotowania.</p>
-                        <a href="nowosci.html#article4" class="btn btn-primary">Czytaj więcej</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="path/to/image5.jpg" class="card-img-top" alt="Artykuł 5">
-                    <div class="card-body">
-                        <h5 class="card-title">Do wypełnienia później</h5>
-                        <p class="card-text">Artykuł w trakcie przygotowania.</p>
-                        <a href="nowosci.html#article5" class="btn btn-primary">Czytaj więcej</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="path/to/image6.jpg" class="card-img-top" alt="Artykuł 6">
-                    <div class="card-body">
-                        <h5 class="card-title">Do wypełnienia później</h5>
-                        <p class="card-text">Artykuł w trakcie przygotowania.</p>
-                        <a href="nowosci.html#article6" class="btn btn-primary">Czytaj więcej</a>
-                    </div>
-                </div>
-            </div>
+        <!-- Nowe artykuły z panelu admina -->
+        <div class="row" id="articlesContainer">
+            <!-- Tutaj pojawią się nowe artykuły dodane przez panel admina -->
         </div>
     </main>
 
@@ -116,9 +82,34 @@
         <p>&copy; 2024 Samoloty News. Wszystkie prawa zastrzeżone. | <a href="kontakt.html" class="text-light">Kontakt</a></p>
     </footer>
 
-    <!-- Skrypty -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pobierz artykuły z localStorage
+            let articles = JSON.parse(localStorage.getItem('articles')) || [];
+
+            // Kontener na artykuły
+            let articlesContainer = document.getElementById('articlesContainer');
+
+            // Tworzenie HTML dla artykułów
+            articles.forEach(article => {
+                let articleHTML = `
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="${article.image}" class="card-img-top" alt="${article.title}">
+                            <div class="card-body">
+                                <h5 class="card-title">${article.title}</h5>
+                                <p class="card-text">${article.content.substring(0, 100)}...</p>
+                                <a href="nowosci.html#${article.id}" class="btn btn-primary">Czytaj więcej</a>
+                            </div>
+                        </div>
+                    </div>`;
+                articlesContainer.innerHTML += articleHTML;
+            });
+        });
+    </script>
 </body>
 </html>
