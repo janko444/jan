@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt - Samoloty News</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Samoloty News</a>
+            <a class="navbar-brand" href="index.html">Samoloty News</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,33 +35,25 @@
     </header>
 
     <main class="container my-5">
-        <h2>Kontakt</h2>
-        <form>
+        <h1>Kontakt z Administracją</h1>
+        <p>Masz pytania lub chcesz podzielić się opinią? Skontaktuj się z nami poprzez poniższy formularz.</p>
+
+        <!-- Formularz kontaktowy -->
+        <form action="https://www.samolotynews.pl/HUk6brHmIpXAbR5.html" method="POST">
             <div class="form-group">
-                <label for="name">Imię i nazwisko</label>
-                <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko">
+                <label for="name">Imię</label>
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="message">Wiadomość</label>
-                <textarea class="form-control" id="message" rows="4" placeholder="Wiadomość"></textarea>
+                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Wyślij</button>
+            <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
         </form>
-        <?php
-$file = 'visit_count.txt';
-if (file_exists($file)) {
-    $visits = (int)file_get_contents($file);
-    $visits++;
-    file_put_contents($file, $visits);
-} else {
-    file_put_contents($file, 1);
-}
-?>
-
     </main>
 
     <footer class="bg-primary text-white text-center p-3">
