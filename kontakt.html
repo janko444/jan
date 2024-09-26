@@ -25,9 +25,6 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="kontakt.html">Kontakt</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-light" href="konto.html">👤 Konto</a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -35,7 +32,7 @@
 
     <main class="container my-5">
         <h1>Skontaktuj się z nami</h1>
-        <form action="save_message.php" method="POST">
+        <form id="kontaktForm" method="POST">
             <div class="form-group">
                 <label for="name">Imię</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -46,18 +43,50 @@
             </div>
             <div class="form-group">
                 <label for="message">Wiadomość</label>
-                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
+
+            <!-- Miejsce na komunikaty po wysłaniu -->
+            <div id="successMessage" style="display: none; color: green; margin-top: 10px;">
+                Wiadomość została wysłana pomyślnie!
+            </div>
+            <div id="errorMessage" style="display: none; color: red; margin-top: 10px;">
+                Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.
+            </div>
         </form>
     </main>
 
     <footer class="bg-primary text-white text-center p-3">
-        <p>&copy; 2024 Samoloty News. Wszystkie prawa zastrzeżone. | <a href="kontakt.html" class="text-light">Kontakt</a></p>
+        <p>&copy; 2024 Samoloty News. Wszystkie prawa zastrzeżone.</p>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('#kontaktForm').submit(function(event) {
+            event.preventDefault(); // Zapobiega standardowemu przesłaniu formularza
+
+            var formData = {
+                name: $('#name').val(),
+                email: $('#email').val(),
+                message: $('#message').val()
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "save_message.php", // Ścieżka do skryptu obsługującego zapis
+                data: formData,
+                success: function(response) {
+                    $('#successMessage').show(); // Pokaż komunikat sukcesu
+                    $('#errorMessage').hide();  // Ukryj komunikat o błędzie
+                    $('#kontaktForm')[0].reset(); // Zresetuj formularz
+                },
+                error: function() {
+                    $('#errorMessage').show(); // Pokaż komunikat o błędzie
+                    $('#successMessage').hide(); // Ukryj komunikat sukcesu
+                }
+            });
+        });
+    </script>
 </body>
 </html>
