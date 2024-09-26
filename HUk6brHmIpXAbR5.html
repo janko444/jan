@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admina - Wiadomości</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1>Otrzymane wiadomości</h1>
+
+        <div class="messages">
+            <?php
+            // Sprawdzenie czy plik istnieje i wczytanie jego zawartości
+            $filename = "messages.txt";
+            if (file_exists($filename)) {
+                $messages = file_get_contents($filename);
+                if ($messages) {
+                    echo nl2br($messages); // Zamiana nowych linii na HTML
+                } else {
+                    echo "<p>Brak wiadomości.</p>";
+                }
+            } else {
+                echo "<p>Brak wiadomości. Plik nie istnieje.</p>";
+            }
+            ?>
+        </div>
+    </div>
+</body>
+</html>
