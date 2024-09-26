@@ -4,14 +4,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    // Zapisujemy wiadomości do pliku
-    $file = 'messages.txt';
-    $current = file_get_contents($file);
-    $current .= "Imię: $name\nEmail: $email\nWiadomość: $message\n\n";
-    file_put_contents($file, $current);
+    // Zapisz wiadomość do pliku lub bazy danych, np. plik .txt
+    $file = fopen("messages.txt", "a");
+    fwrite($file, "Imię: $name\nEmail: $email\nWiadomość: $message\n\n");
+    fclose($file);
 
-    // Przekierowanie na stronę z potwierdzeniem
-    header('Location: kontakt.html?success=1');
-    exit();
+    http_response_code(200); // Status 200 OK
+} else {
+    http_response_code(405); // Status 405 Method Not Allowed
 }
 ?>
