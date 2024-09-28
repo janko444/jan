@@ -1,1 +1,13 @@
+[
+    {
+        "title": "Pierwszy artykuł",
+        "content": "To jest treść pierwszego artykułu.",
+        "image": "link-do-obrazka.jpg"
+    },
+    {
+        "title": "Drugi artykuł",
+        "content": "To jest treść drugiego artykułu.",
+        "image": "link-do-obrazka.jpg"
+    }
+]
 
