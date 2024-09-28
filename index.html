@@ -86,30 +86,23 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Pobierz artykuły z localStorage
-            let articles = JSON.parse(localStorage.getItem('articles')) || [];
-
-            // Kontener na artykuły
-            let articlesContainer = document.getElementById('articlesContainer');
-
-            // Tworzenie HTML dla artykułów
-            articles.forEach(article => {
-                let articleHTML = `
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <img src="${article.image}" class="card-img-top" alt="${article.title}">
-                            <div class="card-body">
-                                <h5 class="card-title">${article.title}</h5>
-                                <p class="card-text">${article.content.substring(0, 100)}...</p>
-                                <a href="nowosci.html#${article.id}" class="btn btn-primary">Czytaj więcej</a>
-                            </div>
-                        </div>
-                    </div>`;
-                articlesContainer.innerHTML += articleHTML;
+   <script>
+    fetch('articles.json')
+        .then(response => response.json())
+        .then(data => {
+            const articlesContainer = document.getElementById('articlesContainer');
+            data.articles.forEach(article => {
+                const articleDiv = document.createElement('div');
+                articleDiv.innerHTML = `
+                    <h5>${article.title}</h5>
+                    <p>${article.content}</p>
+                    <img src="${article.image}" alt="Artykuł" />
+                `;
+                articlesContainer.appendChild(articleDiv);
             });
-        });
-    </script>
+        })
+        .catch(error => console.error('Błąd przy ładowaniu artykułów:', error));
+</script> 
+    
 </body>
 </html>
