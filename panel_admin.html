@@ -9,22 +9,49 @@
 <body>
     <div class="container my-5">
         <h1>Panel Admina</h1>
-        <form id="addArticleForm" action="save_article.php" method="POST">
+        <form id="addArticleForm">
             <div class="form-group">
                 <label for="title">Tytuł artykułu</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Wpisz tytuł" required>
+                <input type="text" class="form-control" id="title" placeholder="Wpisz tytuł" required>
             </div>
             <div class="form-group">
                 <label for="content">Treść artykułu</label>
-                <textarea class="form-control" id="content" name="content" rows="3" placeholder="Wpisz treść" required></textarea>
+                <textarea class="form-control" id="content" rows="3" placeholder="Wpisz treść" required></textarea>
             </div>
             <div class="form-group">
                 <label for="image">Link do obrazka</label>
-                <input type="text" class="form-control" id="image" name="image" placeholder="Wklej link do obrazka">
+                <input type="text" class="form-control" id="image" placeholder="Wklej link do obrazka">
             </div>
             <button type="submit" class="btn btn-primary">Dodaj artykuł</button>
         </form>
         <div id="successMessage" style="display:none;" class="mt-3 alert alert-success">Artykuł dodany pomyślnie!</div>
     </div>
+
+    <script>
+        document.getElementById('addArticleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Pobieranie danych z formularza
+            let title = document.getElementById('title').value;
+            let content = document.getElementById('content').value;
+            let image = document.getElementById('image').value || 'default-image.jpg'; // Domyślny obrazek, jeśli brak
+
+            // Pobierz istniejące artykuły z localStorage
+            let articles = JSON.parse(localStorage.getItem('articles')) || [];
+
+            // Dodanie nowego artykułu
+            let newArticle = { title, content, image };
+            articles.push(newArticle);
+
+            // Zapisanie artykułów w localStorage
+            localStorage.setItem('articles', JSON.stringify(articles));
+
+            // Wyświetlenie komunikatu o sukcesie
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Wyczyść formularz
+            document.getElementById('addArticleForm').reset();
+        });
+    </script>
 </body>
 </html>
