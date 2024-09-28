@@ -132,6 +132,31 @@
     // Wczytaj artykuły po załadowaniu strony
     window.onload = loadArticles;
 </script>
+
+    <script>
+    fetch('articles.json')
+        .then(response => response.json())
+        .then(data => {
+            const articlesContainer = document.getElementById('articlesContainer');
+            data.forEach(article => {
+                const articleDiv = document.createElement('div');
+                articleDiv.classList.add('col-md-4'); // Użyj klas Bootstrap dla stylu
+                articleDiv.innerHTML = `
+                    <div class="card mb-4">
+                        <img src="${article.image}" class="card-img-top" alt="${article.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${article.title}</h5>
+                            <p class="card-text">${article.content}</p>
+                            <a href="nowosci.html#${article.title.replace(/\s+/g, '-')}" class="btn btn-primary">Czytaj więcej</a>
+                        </div>
+                    </div>
+                `;
+                articlesContainer.appendChild(articleDiv);
+            });
+        })
+        .catch(error => console.error('Błąd przy ładowaniu artykułów:', error));
+</script>
+
     
     
 </body>
